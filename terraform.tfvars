@@ -17,6 +17,7 @@ ec2_key_name       = ""  # Optional: Add your key pair name if you have one
 ec2_min_size       = 2
 ec2_max_size       = 4
 ec2_desired_capacity = 2
+ami_id = "ami-0683d724d4cbf410f"
 
 # RDS Configuration
 rds_engine_version         = "8.0"
@@ -25,7 +26,7 @@ rds_allocated_storage      = 20
 rds_max_allocated_storage  = 50
 rds_db_name                = "mydb"
 rds_db_username            = "admin"
-rds_db_password            = "ChangeMe123!"  # ⚠️ CHANGE THIS to a secure password!
+rds_db_password            = "ChangeMe123!"
 rds_multi_az               = false
 rds_backup_retention_period = 7
 

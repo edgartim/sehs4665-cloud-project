@@ -12,6 +12,8 @@ This Terraform configuration deploys a complete AWS cloud environment based on t
 
 ## Architecture
 
+![Architecture Diagram](diagrams/cloud.jpg)
+
 The infrastructure follows a multi-tier architecture:
 
 1. **Edge Layer**: CloudFront + WAF

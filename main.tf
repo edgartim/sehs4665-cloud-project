@@ -121,7 +121,7 @@ module "ec2" {
   max_size         = var.ec2_max_size
   desired_capacity = var.ec2_desired_capacity
   s3_bucket_arn    = module.s3.bucket_arn
-#
+  ami_id           = var.ami_id
   tags = var.tags
 }
 #

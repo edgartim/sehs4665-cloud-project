@@ -32,3 +32,18 @@ output "s3_bucket_arn" {
   value       = module.s3.bucket_arn
 }
 
+output "db_instance_endpoint" {
+  description = "RDS instance endpoint"
+  value       = module.rds.db_instance_endpoint
+}
+
+output "db_instance_username" {
+  description = "RDS instance username"
+  value       = module.rds.db_instance_username
+}
+
+output "db_instance_password" {
+  description = "RDS instance password"
+  value       = module.rds.db_instance_password
+  sensitive   = true
+}

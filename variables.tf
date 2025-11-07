@@ -83,6 +83,12 @@ variable "ec2_desired_capacity" {
   default     = 2
 }
 
+variable "ami_id" {
+  description = "AMI ID for EC2 instances"
+  type        = string
+  default     = "ami-0683d724d4cbf410f"
+}
+
 # RDS Variables
 variable "rds_engine_version" {
   description = "MySQL engine version"

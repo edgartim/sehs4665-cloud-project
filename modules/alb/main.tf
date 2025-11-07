@@ -62,7 +62,11 @@ resource "aws_lb_target_group" "main" {
   port     = var.target_port
   protocol = var.target_protocol
   vpc_id   = var.vpc_id
-
+  stickiness {
+    type = "lb_cookie"
+    cookie_duration = 3600
+    enabled         = true
+  }
   health_check {
     enabled             = true
     healthy_threshold   = 2
@@ -91,13 +95,8 @@ resource "aws_lb_listener" "http" {
   protocol          = "HTTP"
 
   default_action {
-    type = "redirect"
-
-    redirect {
-      port        = "443"
-      protocol    = "HTTPS"
-      status_code = "HTTP_301"
-    }
+    type = "forward"
+    target_group_arn = aws_lb_target_group.main.arn
   }
 
   tags = var.tags

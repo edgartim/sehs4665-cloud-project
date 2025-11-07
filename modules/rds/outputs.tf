@@ -31,7 +31,11 @@ output "db_instance_name" {
 output "db_instance_username" {
   description = "Database master username"
   value       = aws_db_instance.main.username
-  sensitive   = true
+}
+
+output "db_instance_password" {
+  description = "Database master password"
+  value       = aws_db_instance.main.password
 }
 
 output "security_group_id" {
