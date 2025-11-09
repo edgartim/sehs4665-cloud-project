@@ -17,7 +17,7 @@ ec2_key_name       = ""  # Optional: Add your key pair name if you have one
 ec2_min_size       = 2
 ec2_max_size       = 4
 ec2_desired_capacity = 2
-ami_id = "ami-0b7d19504b38f7e35"
+ami_id = "ami-0c0c0ba8f1c8afb23"
 
 # RDS Configuration
 rds_engine_version         = "8.0"
