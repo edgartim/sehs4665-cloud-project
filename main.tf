@@ -147,16 +147,15 @@ module "rds" {
 }
 #
 # # CloudFront Module
-# module "cloudfront" {
-#   source = "./modules/cloudfront"
+module "cloudfront" {
+  source = "./modules/cloudfront"
 #
-#   project_name      = var.project_name
-#   origin_domain_name = module.alb.alb_dns_name
-#   origin_id         = "${var.project_name}-alb-origin"
-#
-#   waf_web_acl_id = module.waf.web_acl_id
-#   acm_certificate_arn = var.cloudfront_acm_certificate_arn
-#
-#   tags = var.tags
-# }
-#
+  project_name      = var.project_name
+  origin_domain_name = module.alb.alb_dns_name
+  origin_id         = "${var.project_name}-alb-origin"
+
+ # waf_web_acl_id = module.waf.web_acl_id
+ # acm_certificate_arn = var.cloudfront_acm_certificate_arn
+
+  tags = var.tags
+}
