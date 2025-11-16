@@ -17,7 +17,7 @@ ec2_key_name       = ""  # Optional: Add your key pair name if you have one
 ec2_min_size       = 2
 ec2_max_size       = 4
 ec2_desired_capacity = 2
-ami_id = "ami-0e61670ecb1ab7f95"
+ami_id = "ami-0affa28cd2a750245"
 
 # RDS Configuration
 rds_engine_version         = "8.0"
@@ -31,7 +31,7 @@ rds_multi_az               = false
 rds_backup_retention_period = 7
 
 # S3 Configuration
-s3_bucket_name        = "sehs4665-group-project-wp-content"  # Your S3 bucket name
+s3_bucket_name        = "sehs4665-group-project-wordpress-content"  # Your S3 bucket name
 s3_enable_versioning  = true
 s3_block_public_access = true
 

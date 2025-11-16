@@ -99,7 +99,7 @@ module "alb" {
   source = "./modules/alb"
   project_name       = var.project_name
   vpc_id             = module.vpc.vpc_id
-  public_subnet_ids  = module.vpc.public_subnet_ids
+  private_subnet_ids  = module.vpc.private_subnet_ids
   certificate_arn            = var.alb_certificate_arn
   enable_deletion_protection = var.alb_enable_deletion_protection
   tags = var.tags
@@ -147,15 +147,15 @@ module "rds" {
 }
 #
 # # CloudFront Module
-module "cloudfront" {
-  source = "./modules/cloudfront"
+# module "cloudfront" {
+#   source = "./modules/cloudfront"
+# #
+#   project_name      = var.project_name
+#   origin_domain_name = module.alb.alb_dns_name
+#   origin_id         = "${var.project_name}-alb-origin"
 #
-  project_name      = var.project_name
-  origin_domain_name = module.alb.alb_dns_name
-  origin_id         = "${var.project_name}-alb-origin"
-
- # waf_web_acl_id = module.waf.web_acl_id
- # acm_certificate_arn = var.cloudfront_acm_certificate_arn
-
-  tags = var.tags
-}
+#  # waf_web_acl_id = module.waf.web_acl_id
+#  # acm_certificate_arn = var.cloudfront_acm_certificate_arn
+#
+#   tags = var.tags
+# }
